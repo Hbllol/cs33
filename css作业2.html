@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Document</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			body{background-color:  dimgray;}
+			#box {
+				width: 100%;
+				height: 1000px;
+			
+				perspective: 800px;
+				margin: 0 auto;
+				margin-top: 100px;
+			}
+			
+			#u1 {margin: 0 auto;
+				width: 300px;
+				height: 200px;
+				transform-style: preserve-3d;
+				position: relative;
+				transform: rotateX(-20deg);
+				animation: lpl 12s infinite ease;
+				margin-top: 300px;
+			}
+			@keyframes lpl{
+				0%{transform: rotatey(60deg); top: 100px;}				
+				20%{transform: rotatey(120deg);top: 100px;}
+				40%{transform: rotatey(180deg);top: 100px;}
+				60%{transform: rotatey(240deg);top: 100px;}
+				80%{transform: rotatey(300deg);top: 100px;}
+				100%{transform: rotatey(360deg); top: 100px;}
+			}
+			li img {
+				width: 300px;
+				height: 200px;
+			}
+			
+			li {
+				width: 300px;
+				height: 200px;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		    li:nth-child(1){
+
+				transform: rotateY(0deg) rotateX(8deg) translateZ(350px);
+			}
+			li:nth-child(2){
+				
+				transform: rotateY(60deg) rotateX(8deg) translateZ(350px);
+			}
+			li:nth-child(3){
+				
+				transform: rotateY(120deg) rotateX(8deg) translateZ(350px);
+			}
+			li:nth-child(4){
+				
+				transform: rotateY(180deg) rotateX(8deg) translateZ(350px);
+			}
+			li:nth-child(5){
+				
+				transform: rotateY(240deg) rotateX(8deg) translateZ(350px);
+			}
+			li:nth-child(6){
+				
+				transform: rotateY(300deg) rotateX(8deg) translateZ(350px);
+			}
+			#s1{
+				width: 150px;
+				height: 15px;
+
+				position: absolute;
+				font-size: 30px;
+				font-weight: bold;
+				top: 0;
+				left: 100px;
+				text-shadow: 5px 5px 5px #FF0000;
+				animation:3s pp  ease;
+			}
+			@keyframes pp{
+				0%{left: 2000px;color: red;}
+
+
+			}
+				#hhh{
+				position: absolute;
+				top: 0;
+				width: 300px;
+				height: 200px;
+				animation: 20s linear infinite pao;
+				opacity: 0.7;
+			}
+			@keyframes pao{
+				0%{margin-left: 0;margin-top: 0;}
+				5%{margin-left: 50%;margin-top: 0;}
+				10%{margin-left: 25%;margin-top: 0%;}
+			    20%{margin-left: 15%;margin-top: 20%;}
+				30%{margin-left: 40%;margin-top: 20%;}
+				40%{margin-left: 25%;margin-top: 10%;}
+				50%{margin-left: 40%;margin-top: -5%;}
+				60%{margin-left: 60%;margin-top: 8%;}
+				80%{margin-left: 50%;margin-top: 0%;}
+				10%{margin-left: 60%;margin-top: 16%;}
+										
+			}*/
+		</style>
+	</head>
+<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<body>
+		<div id="box">
+			<div id="s1">
+			   ❤❤❤❤❤
+			</div>
+			<ul id="u1">
+				<li ><img src="img/s0.jpg" /></li>
+				<li ><img src="img/s1.jpg" /></li>
+				<li ><img src="img/s2.jpg" /></li>
+				<li ><img src="img/s3.jpg" /></li>
+				<li ><img src="img/s4.jpg" /></li>
+				<li ><img src="img/sbg.jpg" /></li>
+			</ul>
+		</div>
+	<div id="hhh">
+			<img src="img/link.gif"/>
+    </div>
+	</body>
+ <script>
+        var box = $('#u1');
+
+        var nowRotateX = 0;
+        var nowRotateY = 0;
+
+        $(document).mousedown(function(ev) {
+            startX = ev.clientX;
+            startY = ev.clientY;
+
+
+
+            $(document).mousemove(function(ev) {
+                var deltaX = ev.clientX - startX;
+                var deltaY = ev.clientY - startY;
+
+                nowRotateX += -deltaY / 100;
+                nowRotateY += deltaX / 100;
+
+                box.css("transform", "rotateX(" + nowRotateX + "deg) rotateY(" + nowRotateY + "deg)");
+                return false;
+            })
+        })
+
+
+        $(document).mouseup(function() {
+            $(document).off('mousemove');
+            box.css("transition", "all 5s ease 0s");
+        })
+        
+      
+    </script>
+
+</html>

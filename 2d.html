@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Document</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			#waikuang {
+				width: 1500px;
+				height: 200px;
+				margin: 100px auto;
+			}
+			
+			.yikuang {
+				float: left;
+				width: 190px;
+				height: 190px;
+				border: 5px solid white;
+				border-radius: 50%;
+				margin-left: 100px;
+				transition: all 2s ease 0s;
+			}
+			
+			.erkuang {
+				width: 160px;
+				height: 160px;
+				border-radius: 50%;
+				margin-left: 15px;
+				margin-top: 15px;
+			}
+			
+			.yikuang:hover {
+				transform: rotate(360deg);
+			}
+			
+		</style>
+	</head>
+
+	<body>
+		<div id="waikuang">
+
+			<div class="yikuang" style="border-top-color: yellow;">
+				<div class="erkuang" style="background-color: yellow;">
+				</div>
+			</div>
+			<div class="yikuang" style="border-right-color: pink;">
+				<div class="erkuang" style="background-color: pink;">
+
+				</div>
+			</div>
+			<div class="yikuang" style="border-bottom-color: green;">
+				<div class="erkuang" style="background-color: green;">
+
+				</div>
+			</div>
+			<div class="yikuang" style="border-left-color: blue;">
+				<div class="erkuang" style="background-color: blue;">
+
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>
